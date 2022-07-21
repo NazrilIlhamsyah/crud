@@ -7,16 +7,17 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
-                        Data Siswa
+                        Data Pembelian
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('pembelian.update') }}" method="post">
+                        <form action="{{ route('pembelian.update', $pembelian->id) }}" method="post">
                             @csrf
+                            @method('put')
                             <div class="mb-3">
                                 <label class="form-label">Nama Pembeli</label>
                                 <input type="text" class="form-control  @error('nama_pembeli') is-invalid @enderror"
-                                    name="nama_pembeli">
-                                @error('nama_pembeli')
+                                    name="nama_pembeli" value="{{ $pembelian->nama_pembeli}}">
+                                @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -25,8 +26,8 @@
                             <div class="mb-3">
                                 <label class="form-label">Tanggal Pembelian</label>
                                 <input type="date" class="form-control  @error('tanggal_pembelian') is-invalid @enderror"
-                                    name="tanggal_pembelian">
-                                @error('tanggal_lahir')
+                                    name="tanggal_pembelian" value="{{ $pembelian->tanggal_pembelian }}">
+                                @error('tanggal_pembelian')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -35,7 +36,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Nama Barang</label>
                                 <input type="text" class="form-control  @error('nama_barang') is-invalid @enderror"
-                                    name="nama_barang">
+                                    name="nama_barang" value="{{ $pembelian->nama_barang }}">
                                 @error('nama_barang')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -44,7 +45,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Harga Satuan</label>
-                                <textarea class="form-control  @error('harga_satuan') is-invalid @enderror" name="harga_satuan"></textarea>
+                                <input type="text" class="form-control  @error('harga_satuan') is-invalid @enderror"
+                                    name="harga_satuan" value="{{ $pembelian->harga_satuan }}">
                                 @error('harga_satuan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -52,8 +54,9 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Jumlah barang</label>
-                                <textarea class="form-control  @error('jumlah_barang') is-invalid @enderror" name="jumlah_barang"></textarea>
+                                <label class="form-label">Jumlah Barang</label>
+                                <input type="text" class="form-control  @error('jumlah_barang') is-invalid @enderror"
+                                    name="jumlah_barang" value="{{ $pembelian->jumlah_barang }}">
                                 @error('jumlah_barang')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

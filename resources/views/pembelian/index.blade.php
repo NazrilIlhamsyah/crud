@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Siswa
+                    Data Pembelian
                     <a href="{{route('pembelian.create')}}" class ="btn btn-sm btn-primary" style="float : right">
                     Tambah Data</a>
                 </div>

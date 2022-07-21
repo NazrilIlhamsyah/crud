@@ -7,7 +7,7 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
-                        Data Siswa
+                        Data Pembelian
                     </div>
                     <div class="card-body">
                         <form action="{{ route('pembelian.store') }}" method="post">
@@ -44,7 +44,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Harga Satuan</label>
-                                <textarea class="form-control  @error('harga_satuan') is-invalid @enderror" name="harga_satuan"></textarea>
+                                <input type="text" class="form-control  @error('harga_satuan') is-invalid @enderror"
+                                    name="harga_satuan">
                                 @error('harga_satuan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -52,8 +53,9 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Jumlah barang</label>
-                                <textarea class="form-control  @error('jumlah_barang') is-invalid @enderror" name="jumlah_barang"></textarea>
+                                <label class="form-label">Jumlah Barang</label>
+                                <input type="text" class="form-control  @error('jumlah_barang') is-invalid @enderror"
+                                    name="jumlah_barang">
                                 @error('jumlah_barang')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

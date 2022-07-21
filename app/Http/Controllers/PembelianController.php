@@ -51,7 +51,7 @@ class PembelianController extends Controller
             'jumlah_barang' => 'required',
         ]);
 
-        $pembelian = Pembelian::findOrFail($id);
+        $pembelian = new Pembelian();
         $pembelian->nama_pembeli = $request->nama_pembeli;
         $pembelian->tanggal_pembelian = $request->tanggal_pembelian;
         $pembelian->nama_barang = $request->nama_barang;
@@ -70,7 +70,7 @@ class PembelianController extends Controller
      */
     public function show($id)
     {
-        $pembelian = $pembelian::findOrFail($id);
+        $pembelian = Pembelian::findOrFail($id);
         return view('pembelian.show', compact('pembelian'));
     }
 

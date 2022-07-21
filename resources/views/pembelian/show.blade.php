@@ -24,7 +24,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">harga Satuan</label>
-                            <input type="text" class="form-control " name="harga_satuan" value="{{ $pembelian->harga_barang }}"
+                            <input type="text" class="form-control " name="harga_satuan" value="{{ $pembelian->harga_satuan }}"
                                 readonly>
                         </div>
                         <div class="mb-3">
