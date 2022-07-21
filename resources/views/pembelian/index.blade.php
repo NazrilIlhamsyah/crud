@@ -29,7 +29,7 @@
                  <tbody>
                     @php $no = 1; @endphp
                     @foreach ($pembelian as $data)
-                    @php $total = $data->harga_satuan * $data->jumlah_barang @endphp
+                    <!-- @php $total = $data->harga_satuan * $data->jumlah_barang @endphp -->
                     <tr>
                         <td>{{$no++}}</td>
                         <td>{{$data->nama_pembeli}}</td>
@@ -37,7 +37,7 @@
                         <td>{{$data->nama_barang}}</td>
                         <td>{{$data->harga_satuan}}</td>
                         <td>{{$data->jumlah_barang}}</td>
-                        <td>{{$total}}</td>
+                        <td>{{$data->total_harga}}</td>
                         <td>
                             <form action="{{route('pembelian.destroy', $data->id)}}" method="post">
                                 @csrf

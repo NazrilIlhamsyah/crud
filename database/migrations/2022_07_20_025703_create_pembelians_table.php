@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('nama_pembeli');
             $table->date('tanggal_pembelian');
             $table->string('nama_barang');
-            $table->string('harga_satuan');
-            $table->string('jumlah_barang');
+            $table->integer('harga_satuan');
+            $table->integer('jumlah_barang');
+            $table->integer('total_harga');
             $table->timestamps();
         });
     }
