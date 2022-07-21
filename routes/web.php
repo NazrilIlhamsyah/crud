@@ -27,3 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //route siswa
 Route::resource('siswa',SiswaController::class);
 Route::resource('pembelian',PembelianController::class);
+
+Route::get('testtemplate', function(){
+    return view('layouts.admin');
+});
