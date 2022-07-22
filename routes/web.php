@@ -24,10 +24,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//route siswa
-Route::resource('siswa',SiswaController::class);
-Route::resource('pembelian',PembelianController::class);
-
-Route::get('testtemplate', function(){
-    return view('layouts.admin');
+//route backhand
+Route::group(['prefix'=>'admin','middleware'=>['auth']],
+function(){
+    Route::get('/',function(){
+        return view('admin.index');
+    });
+    Route::resource('siswa',SiswaController::class);
+    Route::resource('pembelian',PembelianController::class);
 });
+
+
