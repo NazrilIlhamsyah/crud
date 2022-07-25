@@ -1,8 +1,9 @@
 <?php
-
-//panggil controller siswa
+ 
+ 
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\WaliController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ function(){
     });
     Route::resource('siswa',SiswaController::class);
     Route::resource('pembelian',PembelianController::class);
+    Route::resource('wali',WaliController::class);
 });
 
 
